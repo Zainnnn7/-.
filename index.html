@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>will you be my valentine pookie🎀 Cheater </title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f8d7da;
+        }
+        #question {
+            font-size: 20px;
+        }
+        #aychon, #naxer {
+            font-size: 16px;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #aychon {
+            background-color: green;
+        }
+        #naxer {
+            background-color: red;
+            position: absolute;
+            transition: left 0.5s ease, top 0.5s ease;
+        }
+        #kiss-gif {
+            display: none;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            #question {
+                font-size: 16px;
+            }
+            #aychon, #naxer {
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+            #naxer {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Valentine's Day Proposal</h1>
+    <div id="question">Will you be my Valentine's date qn zl?</div>
+    <button id="aychon" onclick="showKissGif()">BALLE</button>
+    <button id="naxer" onclick="askAgain()">NAXER</button>
+    
+    <div id="kiss-gif">
+        <img src="https://media.tenor.com/Q9nqH-dv920AAAAi/hugs-hugging.gif" alt="Kissing Gif">
+    </div>
+    <div id="sad-gif" style="display: none;">
+        <img id="sad-gif-img" src="" alt="Sad Gif">
+    </div>
+    <script>
+        let questionCount = 1;
+        let hasShownSadGif = false;
+        const phrases = [
+            "dllnyayt axr😔?",
+            "I promise it will be the best date ever! Still no?",
+            "da kaka, boo axiram chance abe",
+            "Okay, I'll stop...  bezarw nakam🙄",
+            "galltash nazani tch tch",
+            "pshilaw bo akrm jalakanmw adame eshta naxer?",
+            "pshilayyyy jwanw bo akrm wak qny xow rash be still no😞?",
+            "i can't take much more rejection! Please say yes!",
+            "Let's make it official! Will you be my Valentine's date qn zl?",
+            "basha kota chance will be my valentine pookie?"
+        ];
+
+        function askAgain() {
+            const question = document.getElementById('question');
+            const yesButton = document.getElementById('aychon');
+            const noButton = document.getElementById('naxer');
+
+            if (questionCount <= phrases.length) {
+                question.innerText = phrases[questionCount - 1];
+                questionCount++;
+                 if (!hasShownSadGif) {
+            document.getElementById('sad-gif').style.display = 'block';
+            document.getElementById('sad-gif-img').src = "https://media1.tenor.com/m/5iEotAx1LqkAAAAC/sad-guy-going-to-corner.gif";
+            hasShownSadGif = true; // Set the flag to true after showing the gif
+        }
+            } else {
+                question.innerText = "aya dlnyayt???"; // Change the text after 10 phrases
+                yesButton.style.fontSize = '28px';
+
+            document.getElementById('naxer').addEventListener('click', function() {
+            this.style.left = Math.random() * window.innerWidth + 'px';
+            this.style.top = Math.random() * window.innerHeight + 'px';
+        });
+            }
+        }
+
+        function showKissGif() {
+    const question = document.getElementById('question');
+    const yesButton = document.getElementById('aychon');
+    const noButton = document.getElementById('naxer');
+    const sadGif = document.getElementById('sad-gif'); // Get the sad gif element
+question.style.display = 'none';
+    yesButton.style.display = 'none';
+    noButton.style.display = 'none';
+    sadGif.style.display = 'none'; // Hide the sad gif
+    document.getElementById('kiss-gif').style.display = 'block';
+}
+
+        
+    </script>
+</body>
+</html>
